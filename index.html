@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Needleman–Wunsch algorithm</title>
+    <link rel="icon" type="image/ico" href="./images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="HandheldFriendly" content="True">
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="GridBuilder.js"></script>
+</head>
+<body>
+    <script src="./index.js"></script>
+    <main class="container">
+        <div class="content">
+            <h2 class="title">Needleman-Wunsch Alogrithm</h2>
+        
+            <p>
+                The <a href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman–Wunsch algorithm</a> is an algorithm used in bioinformatics to align protein or nucleotide sequences. It was one of the first applications of dynamic programming to compare biological sequences. The algorithm was developed by Saul B. Needleman and Christian D. Wunsch and published in 1970.<br />
+                <br />
+                This is an interactive example of Needleman-Wunsch alogrithm (used for Global Alignment).
+                The purpose is to visually illustrate how the alogrithm works and how the alignment matrix is constructed.
+            </p>
+        </div>
+        
+        <div class="queryCont">
+            <div class="tableCont">
+                <table class="table">
+                    <tr>
+                        <td><label>Sequence 1</label></td>
+                        <td colspan="4"><input id="seq_1" class='seq' value="GATTACA" maxlength="20" /></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Sequence 2</label></td>
+                        <td colspan="4"><input id="seq_2" class='seq' value="GTCGACGCA" maxlength="20" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                        <br />
+                        </td></tr>
+                    
+                    <tr colspan="4">
+                        <th><label>Match Score</label></th>
+                        <th><label>Mismatch Score</label></th>
+                        <th><label>Gap Penalty</label></th>
+                    </tr>
+                    <tr>
+                        <td><input class="params" id="matchScore" type="number" value="1" /></td>
+                        <td><input class="params" id="mismatchScore" type="number" value="-1" /></td>
+                        <td><input class="params" id="gapScore" type="number" value="-2" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <button class="btn-compute">Compute Optimal Alignment</button>
+                            <button class="btn-clear">Clear Path</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="resultCont">
+                <table>
+                    <h3 style="margin-left: 10px;">Result</h3>
+                    <tr>
+                        <td rowspan="10" id="result"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br \>
+        <br \>
+        
+        <div id="cont"></div>
+    </main>
+    <footer class="footer">
+        <p>Reference: <a href="http://thegrantlab.org/bimm143/">BIMM-143</a></p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
